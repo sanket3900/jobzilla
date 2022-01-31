@@ -1,0 +1,56 @@
+{% extends 'company/company-profile.html'%}
+{% load static %}
+
+{% block content %}
+<section class="companies-info">
+<div class="container">
+<div class="company-title">
+<h3>All Companies</h3>
+</div>
+<div class="companies-list">
+<div class="row">
+    {% for i in company_all %}
+        <div class="col-lg-3 col-md-4 col-sm-6">
+        <div class="company_profile_info">
+        <div class="company-up-info">
+        <img src="{{i.company_logo.url}}" alt="">
+        <h3>{{i.company_name}}</h3>
+        <h3>{{i.user_id.email}}</h3>
+        <h3>{{i.company_contact}}</h3>
+        <h3>{{i.company_city}}</h3>
+        <h4>{{i.company_established}}</h4>
+
+        <ul>
+            {% if cid %}
+                <li><a href="#" title="" class="message-us"><i class="fa fa-envelope"></i></a></li>
+            {% else %}
+                {% if crid in all_customers and i.id in all_companies %}
+                    <li><a href="{% url 'follow' pk=i.id %}" title="" class="follow">STATUS</a></li>
+                {% else %}
+                    <li><a href="{% url 'follow' pk=i.id %}" title="" class="follow">fOLLOW</a></li>
+                {% endif %}
+                    <li><a href="#" title="" class="message-us"><i class="fa fa-envelope"></i></a></li>
+            {% endif %}
+            
+            
+        </ul>
+        </div>
+        <a href="{% url 'view-othercompany-profile' pk=i.id  %}" title="" class="view-more-pro">View Profile</a>
+        </div>
+    
+   
+        </div>
+    {% endfor %}
+
+</div>
+</div>
+<div class="process-comm">
+<div class="spinner">
+<div class="bounce1"></div>
+<div class="bounce2"></div>
+<div class="bounce3"></div>
+</div>
+</div>
+</div>
+</section>
+{% endblock %}

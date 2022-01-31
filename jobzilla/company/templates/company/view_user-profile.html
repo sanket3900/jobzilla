@@ -1,0 +1,333 @@
+{% extends 'company/company-profile.html'%}
+{% load static %}
+
+<html>
+
+<!-- Mirrored from gambolthemes.net/workwise-new/company-profile.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 15 Nov 2021 04:57:54 GMT -->
+
+
+{% block content %}
+<section class="cover-sec">
+<img src="{{crid.customer_cover.url}}"style="width:100%;height:400px" alt="">
+</section>
+<main>
+<div class="main-section">
+<div class="container">
+<div class="main-section-data">
+<div class="row">
+<div class="col-lg-3">
+<div class="main-left-sidebar">
+<div class="user_profile">
+<div class="user-pro-img">
+<img src="{{crid.customer_logo.url}}" alt="">
+</div>
+<div class="user_pro_status">
+
+<li>
+<span>Followers</span>
+<b>155</b>
+</li>
+</ul>
+</div>
+<ul class="social_links">
+<li><a href="#" title=""><i class="la la-globe"></i> www.example.com</a></li>
+<li><a href="#" title=""><i class="fa fa-facebook-square"></i> Http://www.facebook.com/john...</a></li>
+<li><a href="#" title=""><i class="fa fa-twitter"></i> Http://www.Twitter.com/john...</a></li>
+<li><a href="#" title=""><i class="fa fa-google-plus-square"></i> Http://www.googleplus.com/john...</a></li>
+<li><a href="#" title=""><i class="fa fa-behance-square"></i> Http://www.behance.com/john...</a></li>
+<li><a href="#" title=""><i class="fa fa-pinterest"></i> Http://www.pinterest.com/john...</a></li>
+<li><a href="#" title=""><i class="fa fa-instagram"></i> Http://www.instagram.com/john...</a></li>
+<li><a href="#" title=""><i class="fa fa-youtube"></i> Http://www.youtube.com/john...</a></li>
+</ul>
+</div>
+<div class="suggestions full-width">
+<div class="sd-title">
+<h3>Suggestions</h3>
+<i class="la la-ellipsis-v"></i>
+</div>
+<div class="suggestions-list">
+<div class="suggestion-usd">
+<img src="images/resources/s1.png" alt="">
+<div class="sgt-text">
+<h4>Jessica William</h4>
+<span>Graphic Designer</span>
+</div>
+<span><i class="la la-plus"></i></span>
+</div>
+<div class="suggestion-usd">
+<img src="{% static 'company/images/resources/s2.png'%}" alt="">
+<div class="sgt-text">
+<h4>John Doe</h4>
+<span>PHP Developer</span>
+</div>
+<span><i class="la la-plus"></i></span>
+</div>
+<div class="suggestion-usd">
+<img src="{% static 'company/images/resources/s3.png'%}" alt="">
+<div class="sgt-text">
+<h4>Poonam</h4>
+<span>Wordpress Developer</span>
+</div>
+<span><i class="la la-plus"></i></span>
+</div>
+<div class="suggestion-usd">
+<img src="{% static 'company/images/resources/s4.png'%}" alt="">
+<div class="sgt-text">
+<h4>Bill Gates</h4>
+<span>C & C++ Developer</span>
+</div>
+<span><i class="la la-plus"></i></span>
+</div>
+<div class="suggestion-usd">
+<img src="images/resources/s5.png" alt="">
+<div class="sgt-text">
+<h4>Jessica William</h4>
+<span>Graphic Designer</span>
+</div>
+<span><i class="la la-plus"></i></span>
+</div>
+<div class="suggestion-usd">
+<img src="{% static 'company/images/resources/s6.png'%}" alt="">
+<div class="sgt-text">
+<h4>John Doe</h4>
+<span>PHP Developer</span>
+</div>
+<span><i class="la la-plus"></i></span>
+</div>
+<div class="view-more">
+<a href="#" title="">View More</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="col-lg-6">
+<div class="main-ws-sec">
+<div class="user-tab-sec">
+<h3>{{cid.company_name}}</h3>
+<div class="star-descp">
+<span>Established Since 2009</span>
+<ul>
+<li><i class="fa fa-star"></i></li>
+<li><i class="fa fa-star"></i></li>
+<li><i class="fa fa-star"></i></li>
+<li><i class="fa fa-star"></i></li>
+<li><i class="fa fa-star-half-o"></i></li>
+</ul>
+</div>
+<div class="tab-feed">
+<ul>
+<li data-tab="feed-dd" class="active">
+<a href="#" title="">
+<img src="{% static 'company/images/ic1.png'%}" alt="">
+<span>Feed</span>
+</a>
+</li>
+<li data-tab="info-dd">
+<a href="#" title="">
+<img src="images/ic2.png" alt="">
+<span>Info</span>
+</a>
+</li>
+<li data-tab="portfolio-dd">
+<a href="#" title="">
+<img src="{% static 'company/images/ic3.png'%}" alt="" style="width:50px;height:50px;" >
+<span>Portfolio</span>
+</a>
+</li>
+
+
+</ul>
+</div>
+</div>
+<div class="product-feed-tab" id="jobpost-dd">
+    <h3>Add Job Post</h3>
+        <form action="{% url 'job-post' %}" method="POST">
+            {%  csrf_token %}
+            <div class="cp-field">
+                <div class="cpp-fiel">
+                <input type="text" name="job_title" placeholder="enter job title">
+            </div>
+            </div>
+            <div class="cp-field">
+                <div class="cpp-fiel">
+                <input type="text" name="job_description" placeholder="enter job description">
+            </div>
+            </div>
+            <div class="cp-field">
+                <div class="cpp-fiel">
+                <input type="text" name="job_type" placeholder="enter job type">
+            </div>
+            </div>
+            <div class="cp-field">
+                <div class="cpp-fiel">
+                <input type="text" name="emp_requirement" placeholder="enter number of employee require">
+            </div>
+            </div>
+            <div class="cp-field">
+                <div class="cpp-fiel">
+                <input type="text" name="job_tags" placeholder="enter job tags">
+            </div>
+            </div>
+            <div class="cp-field">
+                <div class="cpp-fiel">
+                <input type="text" name="job_salary" placeholder="enter job salary">
+            </div>
+            </div>
+            <div class="save-stngs pd2">
+                <ul>
+                <li><input type="submit" value="Save Setting"></li>
+               
+                </ul>
+                </div>
+        </form>
+    </div>  
+<div class="product-feed-tab current" id="feed-dd">
+<div class="posts-section">
+
+{% for i in jall %}
+<div class="post-bar">
+<div class="post_topbar">
+<div class="usy-dt">
+<img src="{{i.company_id.company_logo.url}}" alt="" height="50px" width="50px">
+<div class="usy-name">
+<h3>{{i.company_id.company_name}}</h3>
+<span><img src="{% static 'company/images/clock.png'%}" alt="">{{i.whenpublished}}</span>
+</div>
+</div>
+<div class="ed-opts">
+<a href="#" title="" class="ed-opts-open"><i class="la la-ellipsis-v"></i></a>
+<ul class="ed-options">
+<li><a href="#" title="">Edit Post</a></li>
+<li><a href="#" title="">Unsaved</a></li>
+<li><a href="#" title="">Unbid</a></li>
+<li><a href="#" title="">Close</a></li>
+<li><a href="#" title="">Hide</a></li>
+</ul>
+</div>
+</div>
+<div class="epi-sec">
+<ul class="descp">
+<li><img src="{% static 'company/images/icon8.png'%}" alt=""><span>{{i.emp_requirement}}</span></li>
+<li><img src="{% static 'company/images/icon9.png'%}" alt=""><span>India</span></li>
+</ul>
+<ul class="bk-links">
+<li><a href="#" title=""><i class="la la-bookmark"></i></a></li>
+<li><a href="#" title=""><i class="la la-envelope"></i></a></li>
+</ul>
+</div>
+<div class="job_descp">
+<h3>{{i.job_title}}</h3>
+<ul class="job-dt">
+<li><a href="#" title="">{{i.job_type}}</a></li>
+<li><span>Rs{{i.job_salary}}/month</span></li>
+</ul>
+<p>{{i.job_description}}<a href="#" title="">view more</a></p>
+<ul class="skill-tags">
+<li><a href="#" title="">HTML</a></li>
+<li><a href="#" title="">PHP</a></li>
+ <li><a href="#" title="">CSS</a></li>
+<li><a href="#" title="">Javascript</a></li>
+<li><a href="#" title="">Wordpress</a></li>
+</ul>
+</div>
+<div class="job-status-bar">
+    <ul class="like-com">
+    <li>
+    <a href="#" ><i class="fas fa-heart"></i> Like</a>
+   
+    <img src="{% static 'company/images/liked-img.png'%}" alt=""></a>
+    <a href="{% url 'post-like' pk=i.id %}"><span>{{i.mylikes}}</span></a>
+    
+    </li>
+    <li><a href="#" class="com"><i class="fas fa-comment-alt"></i> Comments 15</a></li>
+    </ul>
+    <a href="#"><i class="fas fa-eye"></i>Views 50</a>
+    </div>
+    </div>
+    {% endfor %}
+
+<div class="process-comm">
+    
+<div class="spinner">
+<div class="bounce1"></div>
+<div class="bounce2"></div>
+<div class="bounce3"></div>
+</div>
+</div>
+</div>
+</div>
+<div class="product-feed-tab" id="info-dd">
+<div class="user-profile-ov">
+<h3><a href="#" title="" class="overview-open">Overview</a> <a href="#" title="" class="overview-open"><i class="fa fa-pencil"></i></a></h3>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque tempor aliquam felis, nec condimentum ipsum commodo id. Vivamus sit amet augue nec urna efficitur tincidunt. Vivamus consectetur aliquam lectus commodo viverra. Nunc eu augue nec arcu efficitur faucibus. Aliquam accumsan ac magna convallis bibendum. Quisque laoreet augue eget augue fermentum scelerisque. Vivamus dignissim mollis est dictum blandit. Nam porta auctor neque sed congue. Nullam rutrum eget ex at maximus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eget vestibulum lorem.</p>
+</div>
+<div class="user-profile-ov st2">
+<h3><a href="#" title="" class="esp-bx-open">Establish Since </a><a href="#" title="" class="esp-bx-open"><i class="fa fa-pencil"></i></a> <a href="#" title="" class="esp-bx-open"><i class="fa fa-plus-square"></i></a></h3>
+<span>February 2004</span>
+</div>
+<div class="user-profile-ov">
+<h3><a href="#" title="" class="emp-open">Total Employees</a> <a href="#" title="" class="emp-open"><i class="fa fa-pencil"></i></a> <a href="#" title="" class="emp-open"><i class="fa fa-plus-square"></i></a></h3>
+<span>17,048</span>
+</div>
+<div class="user-profile-ov">
+<h3><a href="#" title="" class="lct-box-open">Location</a> <a href="#" title="" class="lct-box-open"><i class="fa fa-pencil"></i></a> <a href="#" title="" class="lct-box-open"><i class="fa fa-plus-square"></i></a></h3>
+<h4>USA</h4>
+<p> Menlo Park, California, United States</p>
+</div>
+</div>
+<div class="product-feed-tab" id="portfolio-dd">
+<div class="portfolio-gallery-sec">
+<h3>Portfolio</h3>
+<div class="gallery_pf">
+<div class="row">
+    
+        {% for i in call %}
+            <div class="col-lg-4 col-md-4 col-sm-4 col-6">
+            <div class="gallery_pt">
+            <img src="{{i.picture.url}}" alt="">
+            <a href="#" title=""><img src="{% static 'company/images/all-out.png'%}" alt=""></a>
+            </div>
+            </div>
+        {% endfor %}
+
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+ 
+
+<div class="col-lg-3">
+<div class="right-sidebar">
+<div class="message-btn">
+<a href="#" title=""><i class="fa fa-envelope"></i> Message</a>
+</div>
+<div class="widget widget-portfolio">
+<div class="wd-heady">
+<h3>Portfolio</h3>
+<img src="{% static 'company/images/photo-icon.png'%}" alt="">
+</div>
+<div class="pf-gallery">
+<div class="row">
+    {% for i in call %}
+        <div class="col-lg-4 col-md-4 col-sm-4 col-6">
+        <div class="gallery_pt">
+        <img src="{{i.picture.url}}" alt="">
+        <a href="#" title=""><img src="{% static 'company/images/all-out.png'%}" alt=""></a>
+        </div>
+        </div>
+    {% endfor %}
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+{% endblock %}

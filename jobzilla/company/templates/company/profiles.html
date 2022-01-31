@@ -1,0 +1,42 @@
+{% extends 'company/company-profile.html'%}
+{% load static %}
+
+
+{% block content %}
+    <section class="companies-info">
+        <div class="container">
+        <div class="company-title">
+        <h3>All USERS</h3>
+        </div>
+        <div class="companies-list">
+        <div class="row">
+            {% for i in user_all %}
+                <div class="col-lg-3 col-md-4 col-sm-6 col-12">
+                <div class="company_profile_info">
+                <div class="company-up-info">
+                <img src="{{i.customer_logo.url}}" alt="">
+                <h3>{{i.customer_name}}</h3>
+                <h3>{{i.user_id.email}}</h3>
+                <h3>{{i.customer_contact}}</h3>
+                <h4>{{i.customer_qualification}}</h4>
+                <ul>
+                <li><a href="#" title="" class="follow">Follow</a></li>
+                <li><a href="#" title="" class="message-us"><i class="fa fa-envelope"></i></a></li>
+                <li><a href="#" title="" class="hire-us">Hire</a></li>
+                </ul>
+                </div>
+                <a href="{% url 'view-otheruserprofile' pk=i.id %}" title="" class="view-more-pro">View Profile</a>
+                </div>
+                </div>
+            {% endfor %}
+                
+        <div class="process-comm">
+        <div class="spinner">
+        <div class="bounce1"></div>
+        <div class="bounce2"></div>
+        <div class="bounce3"></div>
+        </div>
+        </div>
+        </div>
+        </section>
+{% endblock %}
